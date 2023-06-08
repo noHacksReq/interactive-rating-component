@@ -14,7 +14,8 @@ export default {
 </script>
 
 <template>
-  <div class="mainCardFront">
+  <div class="mainCardFront"
+  v-if="cardFrontSide">
     <h1>How did we do?</h1>
     <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offerings!</p>
     <ul>
@@ -24,6 +25,11 @@ export default {
       <li>4</li>
       <li>5</li>
     </ul>
+    <button @click="flipCard">Submit</button>
+  </div>
+  <div class="mainCardBack"
+  v-else>
+    <h1>back of card</h1>
     <button @click="flipCard">Submit</button>
   </div>
 
