@@ -2,7 +2,12 @@
 export default {
   data() {
     return {
-      count: 0
+      cardFrontSide: true
+    }
+  },
+  methods: {
+    flipCard() {
+        this.cardFrontSide = !this.cardFrontSide;
     }
   }
 }
@@ -19,8 +24,9 @@ export default {
       <li>4</li>
       <li>5</li>
     </ul>
-    <button>Submit</button>
+    <button @click="flipCard">Submit</button>
   </div>
+
 </template>
 
 <style>
