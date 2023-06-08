@@ -24,5 +24,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background-color:  hsl(216, 12%, 54%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 </style>
