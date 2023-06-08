@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <div class="mainCardFront"
+  <div class="card front"
   v-if="cardFrontSide">
     <h1>How did we do?</h1>
     <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offerings!</p>
@@ -27,7 +27,7 @@ export default {
     </ul>
     <button @click="flipCard">Submit</button>
   </div>
-  <div class="mainCardBack"
+  <div class="card back"
   v-else>
     <h1>back of card</h1>
     <button @click="flipCard">Submit</button>
@@ -41,13 +41,18 @@ export default {
     display: flex;
   }
 
-  .mainCardFront {
+  .card {
     height: 250px;
     width: 250px;
-    color: white;
     background-color: black; 
     border-radius: 25px;
     display: flex;
     flex-direction: column;
+  }
+
+  .mainCardFront {
+    
+    color: white;
+    
   }
 </style>
