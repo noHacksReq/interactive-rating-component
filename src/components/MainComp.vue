@@ -3,29 +3,44 @@ export default {
   data() {
     return {
       cardFrontSide: true,
+      chosenVal: 0,
       ratings: [
         {star: 1,
         id: 1,
-        value: 1},
+        value: 1,
+        selected: false},
         {star: 2,
         id: 2,
-        value: 2},
+        value: 2,
+        selected: false},
         {star: 3,
         id: 3,
-        value: 3},
+        value: 3,
+        selected: false},
         {star: 4,
         id: 4,
-        value: 4},
+        value: 4,
+        selected: false},
         {star: 5,
         id: 5,
-        value: 5}
+        value: 5,
+        selected: false}
       ]
     }
   },
   methods: {
     flipCard() {
         this.cardFrontSide = !this.cardFrontSide;
+    },
+    activeRating(e) {
+      e.selected = !e.selected;
+      this.chosenValue = e.value;
+      
     }
+    
+  },
+  computed: {
+    
   }
 }
 </script>
@@ -41,8 +56,12 @@ export default {
     <p class="cardFrCont">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offerings!</p>
     <ul class="ratingLi">
       <li v-for="rating in ratings" :key="rating.id"
-      class="rating">
-      <div class="ratingStyle">
+      @click="activeRating(rating)"
+     >
+      <div 
+      class="ratingStyle"
+     :class="[rating.selected ? 'activeRatingStyle' : 'ratingStyle']"
+      >
         {{ rating.star }}
       </div>
       </li>
@@ -61,20 +80,13 @@ export default {
 
 <style>
 * {
-  outline: 1px solid white;
+
 }
-  .ratingLi {
-    list-style: none;
-    display: flex;
-    width: 100%;
-    padding: 0;
-    margin: 0 auto;
-  }
 
   .card {
-    min-height: fit-content;
-    max-height: 44%;
-    width: 22vw;
+    
+    max-width: 22vw;
+    min-height: 22vw;
     padding: 25px;
     background-color: hsl(213, 19%, 18%); 
     border-radius: 25px;
@@ -105,10 +117,17 @@ export default {
     
   }
 
+  .ratingLi {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+  }
+
   .rating {
     color: white;
-    height: 100%;
-    width: 100%;
+    
     
   }
 
@@ -116,11 +135,21 @@ export default {
     display: flex;
     justify-content: center;
     
-    background-color: hsl(217, 12%, 63%);
-    
+    background-color:hsl(216, 12%, 8%);
+    color: hsl(217, 12%, 63%);
     border-radius: 50%;
-    padding:20px;
+    padding:1vw;
+    cursor: pointer;
     
+  }
+
+  .ratingStyle:hover {
+    background-color:  hsl(216, 12%, 54%);
+  }
+
+  .activeRatingStyle {
+    background-color: hsl(25, 97%, 53%);
+    color:  hsl(0, 0%, 100%);
   }
   
   .submitBtn {
@@ -128,7 +157,7 @@ export default {
    border: none;
    height: 8vh;
    width: 99%;
-   margin: auto;
+   margin: 010% 0 5%;
    border-radius: 10px;
   }
 
