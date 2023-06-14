@@ -33,14 +33,30 @@ export default {
         this.cardFrontSide = !this.cardFrontSide;
     },
     activeRating(e) {
+      
       e.selected = !e.selected;
-      this.chosenValue = e.value;
+      
+      
+      this.chosenVal = e.value
+      this.ratings.map(function(i) {
+       console.log(i.selected)
+       if(i.value === e.value ) {
+        
+        i.selected = true
+       }else{
+        i.selected = false
+       }
+      })
       
     }
     
   },
   computed: {
-    
+    data() {
+      return {
+        
+      }
+    }
   }
 }
 </script>
