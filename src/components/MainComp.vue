@@ -113,7 +113,7 @@ export default {
   .cardFrCont {
     text-align: left;
     color: hsl(217, 12%, 63%);
-    font-weight: 700;
+    font-weight: 400;
   }
 
 
