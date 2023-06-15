@@ -36,8 +36,7 @@ export default {
     activeRating(e) {
       
       e.selected = !e.selected;
-      
-      
+            
       this.chosenVal = e.value
       this.ratings.map(function(i) {
        console.log(i.selected)
@@ -51,13 +50,6 @@ export default {
       
     }
     
-  },
-  computed: {
-    data() {
-      return {
-        
-      }
-    }
   }
 }
 </script>
@@ -75,11 +67,8 @@ export default {
       <li class="ratingStyle"
       :class="[rating.selected ? 'activeRatingStyle' : 'rating']"
        v-for="rating in ratings" :key="rating.id"
-      @click="activeRating(rating)"
-     >
-      <div 
-       
-      >
+      @click="activeRating(rating)">
+      <div >
         {{ rating.star }}
       </div>
       </li>
@@ -103,18 +92,15 @@ export default {
  
 }
 
-  .card {
-    
-    max-width: 22vw;
-    min-height: 22vw;
-    font-size: 15px;
-    padding: 25px;
-    background-color: hsl(213, 19%, 18%); 
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    
-    font-weight: 400;
+.card {
+  max-width: 22vw;
+  font-size: 15px;
+  padding: 25px 25px 12px 25px;
+  background-color: hsl(213, 19%, 18%); 
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
   }
 
   .cardTitle {
@@ -142,8 +128,6 @@ export default {
     
   }
 
-
-
   .ratingLi {
     list-style: none;
     display: flex;
@@ -153,13 +137,10 @@ export default {
     padding: 0;
     font-weight: 400;;
   }
-
- 
-
+  
   .rating {
     color: white;
     background-color:hsl(216, 12%, 8%);
-    
   }
 
   .ratingStyle {
@@ -173,7 +154,6 @@ export default {
     border-radius: 50%;
     padding:1vw;
     cursor: pointer;
-    
   }
 
   .ratingStyle:hover {
@@ -197,8 +177,5 @@ export default {
   .submitBtn:hover {
     background-color: hsl(0, 0%, 100%);
   }
-
-
-
 
 </style>
