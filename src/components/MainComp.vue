@@ -1,4 +1,5 @@
 <script>
+
 export default {
   data() {
     return {
@@ -71,12 +72,13 @@ export default {
     <h1 class="cardTitle">How did we do?</h1>
     <p class="cardFrCont">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offerings!</p>
     <ul class="ratingLi">
-      <li v-for="rating in ratings" :key="rating.id"
+      <li class="ratingStyle"
+      :class="[rating.selected ? 'activeRatingStyle' : 'rating']"
+       v-for="rating in ratings" :key="rating.id"
       @click="activeRating(rating)"
      >
       <div 
-      class="ratingStyle"
-     :class="[rating.selected ? 'activeRatingStyle' : 'ratingStyle']"
+       
       >
         {{ rating.star }}
       </div>
@@ -95,63 +97,78 @@ export default {
 </template>
 
 <style>
-* {
 
+
+* {
+ 
 }
 
   .card {
     
     max-width: 22vw;
     min-height: 22vw;
+    font-size: 15px;
     padding: 25px;
     background-color: hsl(213, 19%, 18%); 
     border-radius: 25px;
     display: flex;
     flex-direction: column;
     
+    font-weight: 400;
   }
 
   .cardTitle {
     color: hsl(0, 0%, 100%);
     text-align: left;
     margin-bottom: 0;
+    font-weight: 700;
   }
 
   .cardFrCont {
     text-align: left;
     color: hsl(217, 12%, 63%);
+    font-weight: 700;
   }
 
 
   .starBg {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 20px;
-    background-color:  hsl(213, 19%, 18%);
+    height: 20px;
+    background-color: hsl(216, 12%, 8%);
     padding: 2%;
     border-radius: 50%;
     
   }
+
+
 
   .ratingLi {
     list-style: none;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-top: 45px;
     padding: 0;
+    font-weight: 400;;
   }
+
+ 
 
   .rating {
     color: white;
-    
+    background-color:hsl(216, 12%, 8%);
     
   }
 
   .ratingStyle {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    height: 25px;
+    width: 25px;
     
-    background-color:hsl(216, 12%, 8%);
     color: hsl(217, 12%, 63%);
     border-radius: 50%;
     padding:1vw;
@@ -174,7 +191,7 @@ export default {
    height: 8vh;
    width: 99%;
    margin: 010% 0 5%;
-   border-radius: 10px;
+   border-radius: 50px;
   }
 
   .submitBtn:hover {
