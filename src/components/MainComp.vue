@@ -168,7 +168,7 @@ export default {
   .submitBtn {
    background-color: hsl(25, 97%, 53%);
    border: none;
-   height: 8vh;
+   height: 50px;
    width: 99%;
    margin: 010% 0 5%;
    border-radius: 50px;
