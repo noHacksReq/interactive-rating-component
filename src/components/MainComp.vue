@@ -62,7 +62,7 @@ export default {
   <svg width="17" height="16" xmlns="http://www.w3.org/2000/svg"><path d="m9.067.43 1.99 4.031c.112.228.33.386.58.422l4.45.647a.772.772 0 0 1 .427 1.316l-3.22 3.138a.773.773 0 0 0-.222.683l.76 4.431a.772.772 0 0 1-1.12.813l-3.98-2.092a.773.773 0 0 0-.718 0l-3.98 2.092a.772.772 0 0 1-1.119-.813l.76-4.431a.77.77 0 0 0-.222-.683L.233 6.846A.772.772 0 0 1 .661 5.53l4.449-.647a.772.772 0 0 0 .58-.422L7.68.43a.774.774 0 0 1 1.387 0Z" fill="#FC7614"/></svg>
 </div>
     <h1 class="cardTitle">How did we do?</h1>
-    <p class="cardFrCont">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offerings!</p>
+    <p class="cardCont">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offerings!</p>
     <ul class="ratingLi">
       <li class="ratingStyle"
       :class="[rating.selected ? 'activeRatingStyle' : 'rating']"
@@ -78,8 +78,9 @@ export default {
   </div>
   <div class="card back"
   v-else>
-    <h1 class="cardTitle">back of card</h1>
-    
+    <div class="ratingDis">You selected {{ chosenVal }} out of 5</div>
+    <h1 class="cardTitle">Thank You!</h1>
+    <p class="cardCont">We appreciate you taking the time to give us a rating. If you ever need more support, don't hesitate to get in touch!</p>
     <button @click="flipCard">Submit</button>
   </div>
 
@@ -94,6 +95,7 @@ export default {
 
 .card {
   max-width: 22vw;
+  min-height: 330px;
   font-size: 15px;
   padding: 25px 25px 12px 25px;
   background-color: hsl(213, 19%, 18%); 
@@ -103,6 +105,18 @@ export default {
   font-weight: 400;
   }
 
+  .back {
+    align-items: center;
+  }
+
+  .ratingDis {
+    color: hsl(25, 97%, 53%);
+    background-color: hsl(216, 12%, 8%);
+    padding: 8px;
+    border-radius: 50px;
+
+  }
+
   .cardTitle {
     color: hsl(0, 0%, 100%);
     text-align: left;
@@ -110,7 +124,7 @@ export default {
     font-weight: 700;
   }
 
-  .cardFrCont {
+  .cardCont {
     text-align: left;
     color: hsl(217, 12%, 63%);
     font-weight: 400;
