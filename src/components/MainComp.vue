@@ -33,23 +33,14 @@ export default {
     flipCard() {
         this.cardFrontSide = !this.cardFrontSide;
     },
+
     activeRating(e) {
-      
       e.selected = !e.selected;
-            
       this.chosenVal = e.value
       this.ratings.map(function(i) {
-       console.log(i.selected)
-       if(i.value === e.value ) {
-        
-        i.selected = true
-       }else{
-        i.selected = false
-       }
+       i.value === e.value ? i.selected = true : i.selected = false;
       })
-      
     }
-    
   }
 }
 </script>
@@ -88,11 +79,6 @@ export default {
 
 <style>
 
-
-* {
- 
-}
-
 .card {
   max-width: 22vw;
   min-height: 410px;
@@ -109,7 +95,6 @@ export default {
 
   .back {
     align-items: center;
-    text-align: left;
   }
 
   .ratingDis {
@@ -119,19 +104,17 @@ export default {
     margin-top: 25px;
     padding: 8px 10px;
     border-radius: 50px;
-
+    width: 66%;
   }
 
   .cardTitle {
     color: hsl(0, 0%, 100%);
-    text-align: left;
     margin-bottom: 0;
     font-weight: 700;
   }
 
   .frontCardCont {
     text-align: left;
-    
     font-weight: 400;
   }
 
@@ -152,14 +135,12 @@ export default {
     background-color: var(--DarkBlue);
     padding: 2%;
     border-radius: 50%;
-    
   }
 
   .ratingLi {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    width: 100%;
     margin-top: 45px;
     padding: 0;
     font-weight: 400;;
@@ -176,7 +157,6 @@ export default {
     flex-direction: column;
     height: 25px;
     width: 25px;
-    
     color: var(--White);
     border-radius: 50%;
     padding:1vw;
@@ -197,8 +177,9 @@ export default {
    border: none;
    height: 50px;
    width: 99%;
-   margin: 010% 0 5%;
+   margin: 10% 0 5%;
    border-radius: 50px;
+   cursor: pointer;
   }
 
   .submitBtn:hover {
