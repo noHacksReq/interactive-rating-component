@@ -98,7 +98,7 @@ export default {
   min-height: 330px;
   font-size: 15px;
   padding: 25px 25px 12px 25px;
-  background-color: hsl(213, 19%, 18%); 
+  background-color: var(--VeryDarkBlue); 
   border-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -134,9 +134,10 @@ export default {
   .starBg {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     width: 20px;
     height: 20px;
-    background-color: hsl(216, 12%, 8%);
+    background-color: var(--DarkBlue);
     padding: 2%;
     border-radius: 50%;
     
@@ -154,7 +155,7 @@ export default {
   
   .rating {
     color: white;
-    background-color:hsl(216, 12%, 8%);
+    background-color: var(--DarkBlue);
   }
 
   .ratingStyle {
@@ -164,23 +165,23 @@ export default {
     height: 25px;
     width: 25px;
     
-    color: hsl(217, 12%, 63%);
+    color: var(--White);
     border-radius: 50%;
     padding:1vw;
     cursor: pointer;
   }
 
   .ratingStyle:hover {
-    background-color:  hsl(216, 12%, 54%);
+    background-color:  var(--LightGrey);
   }
 
   .activeRatingStyle {
-    background-color: hsl(25, 97%, 53%);
-    color:  hsl(0, 0%, 100%);
+    background-color: var(--Orange);
+    color:  var(--White);
   }
   
   .submitBtn {
-   background-color: hsl(25, 97%, 53%);
+   background-color: var(--Orange);
    border: none;
    height: 50px;
    width: 99%;
