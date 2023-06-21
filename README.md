@@ -1,5 +1,10 @@
 # 
 
+This is the interactive rating component from Frontend Mentor.
+Challenge can be found here: https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI
+
+Project can be run by following these steps:
+
 ## Project setup
 ```
 npm install
