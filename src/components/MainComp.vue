@@ -79,7 +79,10 @@ export default {
 
 <style>
 
+
+
 .card {
+  min-width: 391px;
   max-width: 22vw;
   min-height: 410px;
   font-size: 15px;
@@ -185,5 +188,14 @@ export default {
   .submitBtn:hover {
     background-color: var(--White);
   }
+
+  @media screen and (max-width: 375px) {
+    .card {
+    min-width: 60vw;
+  }
+  .cardTitle {
+    font-size: 25px;
+  }
+}
 
 </style>
