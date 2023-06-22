@@ -1,0 +1,29 @@
+# 
+
+This is the interactive rating component from Frontend Mentor.
+Challenge can be found here: https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI
+
+Project can be run by following these steps:
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
